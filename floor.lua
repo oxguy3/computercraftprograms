@@ -25,6 +25,10 @@ Assumptions made by this program:
 - There are no blocks in the way of the turtle's
   path.
 
+TODO:
+- Use zigzagging to cut fuel/time in half.
+- Add option to place up instead of down.
+
 --]]
 
 local args = { ... }
