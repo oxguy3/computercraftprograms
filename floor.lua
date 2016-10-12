@@ -31,27 +31,34 @@ local args = { ... }
 length=tonumber(args[1])
 width=tonumber(args[2])
 
+function aggroForward()
+  while not turtle.forward() do
+    turtle.attack()
+  end
+end
+
+
 for i=0,width do
   turtle.turnRight()
   for j=0,i-2 do
-    turtle.forward()
+    aggroForward()
   end
   turtle.turnLeft()
   turtle.suck(length)
   turtle.turnLeft()
   for j=0,i-1 do
-    turtle.forward()
+    aggroForward()
   end
   turtle.turnLeft()
   for j=0,length-1 do
     turtle.placeDown()
     if j ~= length-1 then
-      turtle.forward()
+      aggroForward()
     end
   end
   turtle.turnLeft()
   turtle.turnLeft()
   for j=0,length-2 do
-    turtle.forward()
+    aggroForward()
   end
 end
